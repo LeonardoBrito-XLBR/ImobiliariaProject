@@ -17,7 +17,7 @@ import jakarta.persistence.Column;
 public class Inquilino {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     // IDENTIFICAÇÃO
@@ -28,7 +28,7 @@ public class Inquilino {
     @Column(nullable = false, unique = true, length = 11)
     private int cpf;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(nullable = false, unique = false, length = 11)
     private int telefone;
 
     // public UUID getId() {
