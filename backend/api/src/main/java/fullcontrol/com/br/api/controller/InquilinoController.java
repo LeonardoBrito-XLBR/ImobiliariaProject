@@ -23,49 +23,49 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/api/inquilinos")
 public class InquilinoController {
 
-    @Autowired
-    private InquilinoService service;
+    // @Autowired
+    // private InquilinoService service;
 
-    @GetMapping("path")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
+    // @GetMapping("path")
+    // public String getMethodName(@RequestParam String param) {
+    //     return new String();
+    // }
     
-    public ResponseEntity<Page<Inquilino>> listar(Pageable pageable) {
-        return ResponseEntity.ok(service.listarTodos(pageable));
-    }
+    // public ResponseEntity<Page<Inquilino>> listar(Pageable pageable) {
+    //     return ResponseEntity.ok(service.listarTodos(pageable));
+    // }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Inquilino> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(service.buscarPorId(id));
-    }
+    // @GetMapping("/{id}")
+    // public ResponseEntity<Inquilino> buscarPorId(@PathVariable Long id) {
+    //     return ResponseEntity.ok(service.buscarPorId(id));
+    // }
 
-    @GetMapping("/cpf/{cpfCnpj}")
-    public ResponseEntity<Inquilino> buscarPorCpfCnpj(@PathVariable String cpfCnpj) {
-        return ResponseEntity.ok(service.buscarPorCpfCnpj(cpfCnpj));
-    }
+    // @GetMapping("/cpf/{cpfCnpj}")
+    // public ResponseEntity<Inquilino> buscarPorCpfCnpj(@PathVariable String cpfCnpj) {
+    //     return ResponseEntity.ok(service.buscarPorCpfCnpj(cpfCnpj));
+    // }
 
-    @PostMapping 
-    public ResponseEntity<Inquilino> criar(@RequestBody @Valid InquilinoDTO dto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.criar(dto));
-    }
+    // @PostMapping 
+    // public ResponseEntity<Inquilino> criar(@RequestBody @Valid InquilinoDTO dto) {
+    //     return ResponseEntity.status(HttpStatus.CREATED).body(service.criar(dto));
+    // }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Inquilino> atualizar(@PathVariable Long id,
-                                               @RequestBody @Valid InquilinoDTO dto) {
-        return ResponseEntity.ok(service.atualizar(id, dto));
-    }
+    // @PutMapping("/{id}")
+    // public ResponseEntity<Inquilino> atualizar(@PathVariable Long id,
+    //                                            @RequestBody @Valid InquilinoDTO dto) {
+    //     return ResponseEntity.ok(service.atualizar(id, dto));
+    // }
 
-    @PatchMapping("/{id}/status")
-    public ResponseEntity<Void> atualizarStatus(@PathVariable Long id,
-                                                 @RequestParam StatusInquilino status) {
-        service.atualizarStatus(id, status);
-        return ResponseEntity.noContent().build();
-    }
+    // @PatchMapping("/{id}/status")
+    // public ResponseEntity<Void> atualizarStatus(@PathVariable Long id,
+    //                                              @RequestParam StatusInquilino status) {
+    //     service.atualizarStatus(id, status);
+    //     return ResponseEntity.noContent().build();
+    // }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        service.deletar(id);
-        return ResponseEntity.noContent().build();
-    }
+    // @DeleteMapping("/{id}")
+    // public ResponseEntity<Void> deletar(@PathVariable Long id) {
+    //     service.deletar(id);
+    //     return ResponseEntity.noContent().build();
+    // }
 }
