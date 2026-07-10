@@ -28,8 +28,12 @@ public class Imovel {
     @Enumerated(EnumType.STRING)
     private String tipo;
 
+    @Column(nullable = false)
+    private int metroQuadrado;
+    
+
     @Override
     public String toString() {
-        return "Imovel{numero=" + numero + ", tipo='" + tipo + '\'' + '}';
+        return "Imovel{numero=" + numero + ", tipo='" + tipo + '\'' + ", metroQuadrado=" + metroQuadrado + '}';
     }
 }
